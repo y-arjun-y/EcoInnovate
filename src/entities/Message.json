@@ -1,0 +1,38 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "sender_email": {
+      "type": "string",
+      "description": "Email of message sender"
+    },
+    "recipient_email": {
+      "type": "string",
+      "description": "Email of message recipient"
+    },
+    "content": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "submission_share",
+        "challenge_invite",
+        "collaboration_request"
+      ],
+      "default": "text"
+    },
+    "related_id": {
+      "type": "string",
+      "description": "ID of related submission/challenge if applicable"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether message has been read"
+    }
+  },
+  "required": ["sender_email", "recipient_email", "content"]
+}

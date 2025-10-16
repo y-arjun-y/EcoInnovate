@@ -1,0 +1,45 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "submission_id": {
+      "type": "string",
+      "description": "ID of the submission being reviewed"
+    },
+    "reviewer_type": {
+      "type": "string",
+      "enum": ["peer", "expert", "enthusiast"],
+      "description": "Type of reviewer"
+    },
+    "innovation_rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "sustainability_rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "feasibility_rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "feedback": {
+      "type": "string",
+      "description": "Written feedback"
+    },
+    "constructive_suggestions": {
+      "type": "string",
+      "description": "Suggestions for improvement"
+    }
+  },
+  "required": [
+    "submission_id",
+    "reviewer_type",
+    "innovation_rating",
+    "sustainability_rating",
+    "feasibility_rating"
+  ]
+}

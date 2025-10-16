@@ -1,0 +1,53 @@
+{
+  "name": "UserAchievement",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User's email"
+    },
+    "total_stars": {
+      "type": "number",
+      "default": 0
+    },
+    "current_streak": {
+      "type": "number",
+      "default": 0,
+      "description": "Current daily engagement streak"
+    },
+    "longest_streak": {
+      "type": "number",
+      "default": 0,
+      "description": "Longest streak achieved"
+    },
+    "challenges_completed": {
+      "type": "number",
+      "default": 0
+    },
+    "submissions_count": {
+      "type": "number",
+      "default": 0
+    },
+    "reviews_given": {
+      "type": "number",
+      "default": 0
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of earned badge names"
+    },
+    "level": {
+      "type": "string",
+      "enum": ["seedling", "sprout", "sapling", "tree", "forest_guardian"],
+      "default": "seedling"
+    },
+    "last_activity_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": ["user_email"]
+}

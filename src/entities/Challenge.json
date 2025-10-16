@@ -1,0 +1,73 @@
+{
+  "name": "Challenge",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Challenge title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed challenge description"
+    },
+    "brief": {
+      "type": "string",
+      "description": "Short challenge brief"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"],
+      "description": "Challenge difficulty level"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "water_conservation",
+        "energy_efficiency",
+        "waste_reduction",
+        "sustainable_transport",
+        "green_building",
+        "renewable_energy",
+        "circular_economy"
+      ],
+      "description": "Challenge category"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "review", "completed"],
+      "default": "draft"
+    },
+    "rewards_stars": {
+      "type": "number",
+      "description": "Stars awarded for participation"
+    },
+    "bonus_stars": {
+      "type": "number",
+      "description": "Bonus stars for top submissions"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Challenge banner image"
+    },
+    "submission_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "difficulty",
+    "category",
+    "start_date",
+    "end_date"
+  ]
+}

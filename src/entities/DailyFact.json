@@ -1,0 +1,44 @@
+{
+  "name": "DailyFact",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Fact title"
+    },
+    "content": {
+      "type": "string",
+      "description": "The interesting fact content"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "history",
+        "innovation",
+        "future",
+        "breakthrough",
+        "sustainability",
+        "engineering"
+      ],
+      "description": "Fact category"
+    },
+    "fact_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date this fact is featured"
+    },
+    "source": {
+      "type": "string",
+      "description": "Source of the fact"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Illustrative image for the fact"
+    },
+    "read_time": {
+      "type": "number",
+      "description": "Estimated reading time in minutes"
+    }
+  },
+  "required": ["title", "content", "category", "fact_date"]
+}

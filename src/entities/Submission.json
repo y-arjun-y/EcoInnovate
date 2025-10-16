@@ -1,0 +1,60 @@
+{
+  "name": "Submission",
+  "type": "object",
+  "properties": {
+    "challenge_id": {
+      "type": "string",
+      "description": "ID of the related challenge"
+    },
+    "title": {
+      "type": "string",
+      "description": "Submission title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the solution"
+    },
+    "submission_type": {
+      "type": "string",
+      "enum": ["image", "video", "cad_model", "document"],
+      "description": "Type of submission"
+    },
+    "file_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of uploaded file URLs"
+    },
+    "innovation_score": {
+      "type": "number",
+      "description": "Innovation rating (1-10)"
+    },
+    "sustainability_score": {
+      "type": "number",
+      "description": "Sustainability impact rating (1-10)"
+    },
+    "feasibility_score": {
+      "type": "number",
+      "description": "Implementation feasibility rating (1-10)"
+    },
+    "total_score": {
+      "type": "number",
+      "description": "Overall submission score"
+    },
+    "review_count": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "submitted", "under_review", "reviewed"],
+      "default": "draft"
+    },
+    "stars_earned": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": ["challenge_id", "title", "description", "submission_type"]
+}

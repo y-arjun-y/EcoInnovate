@@ -1,0 +1,37 @@
+{
+  "name": "Connection",
+  "type": "object",
+  "properties": {
+    "requester_email": {
+      "type": "string",
+      "description": "Email of person sending connection request"
+    },
+    "recipient_email": {
+      "type": "string",
+      "description": "Email of person receiving connection request"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "accepted", "declined", "blocked"],
+      "default": "pending",
+      "description": "Status of the connection"
+    },
+    "connection_type": {
+      "type": "string",
+      "enum": ["colleague", "mentor", "collaborator", "friend", "classmate"],
+      "description": "Type of connection relationship"
+    },
+    "message": {
+      "type": "string",
+      "description": "Optional message with connection request"
+    },
+    "common_interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Shared interests that led to connection"
+    }
+  },
+  "required": ["requester_email", "recipient_email"]
+}
